@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:loc="http://linkserver.icmc.usp.br/ckonto/spatial#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://linkserver.icmc.usp.br/ckonto/sEvent#"
+  xml:base="http://linkserver.icmc.usp.br/ckonto/sEvent">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://linkserver.icmc.usp.br/ckonto/spatial"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="SpatialEvent">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="VirtualEvent"/>
+          <owl:Class rdf:ID="PhysicalEvent"/>
+        </owl:unionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/spatial#SpatialThing"/>
+  </owl:Class>
+  <owl:Class rdf:about="#VirtualEvent">
+    <rdfs:subClassOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/spatial#VirtualLocation"/>
+    <rdfs:subClassOf rdf:resource="#SpatialEvent"/>
+  </owl:Class>
+  <owl:Class rdf:about="#PhysicalEvent">
+    <rdfs:subClassOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/spatial#PhysicalLocation"/>
+    <rdfs:subClassOf rdf:resource="#SpatialEvent"/>
+  </owl:Class>
+  <owl:TransitiveProperty rdf:ID="isLocatedIn">
+    <rdfs:domain rdf:resource="#SpatialEvent"/>
+    <owl:equivalentProperty rdf:resource="http://linkserver.icmc.usp.br/ckonto/spatial#isPartOf"/>
+    <rdfs:range rdf:resource="http://linkserver.icmc.usp.br/ckonto/spatial#SpatialThing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:TransitiveProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 1.3, Build 225.4)  http://protege.stanford.edu -->
+
+
+
+

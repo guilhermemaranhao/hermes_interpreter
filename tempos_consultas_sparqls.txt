@@ -1,0 +1,11 @@
+Sem ajustes no sparql
+Tempo da consulta: 10004ms
+Tempo da consulta: 551ms
+Tempo da consulta: 240ms
+Tempo da consulta: 421ms
+
+com ajustes no sparql
+Tempo da consulta: 10064ms
+Tempo da consulta: 582ms
+Tempo da consulta: 301ms
+Tempo da consulta: 462ms

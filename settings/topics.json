@@ -1,0 +1,121 @@
+{
+ "ontologias": [{
+  "atualizada": true,
+  "nome": "./src/ontologia/msvhSchema.ttl"
+ }],
+ "topicos": [
+  {
+   "ontologia": "./src/ontologia/msvhSchema.ttl",
+   "tipo_inferencia": [{"tipo": "regras"}],
+   "registrar": "VSO_0000005",
+   "assinar": [{
+    "tipo": "notificacao",
+    "nome": "VSO_0000005",
+    "complementoTopico": ""
+   }],
+   "tipos": [{"tipo": "notificacao"}],
+   "situation": [{
+    "nomeSituation": "./situationsFilter/PressaoSanguineaSituationFilter.json",
+    "nomeTopico": "VSO_0000005"
+   }]
+  },
+  {
+   "ontologia": "./src/ontologia/msvhSchema.ttl",
+   "tipo_inferencia": [{"tipo": "regras"}],
+   "registrar": "VSO_0000030",
+   "assinar": [{
+    "tipo": "notificacao",
+    "nome": "VSO_0000030",
+    "complementoTopico": ""
+   }],
+   "tipos": [{"tipo": "notificacao"}],
+   "situation": [{
+    "nomeSituation": "./situationsFilter/FrequenciaPulsoSituationFilter.json",
+    "nomeTopico": "VSO_0000030"
+   }]
+  },
+  {
+   "ontologia": "./src/ontologia/msvhSchema.ttl",
+   "tipo_inferencia": [{"tipo": "regras"}],
+   "registrar": "VSO_0000008",
+   "assinar": [{
+    "tipo": "notificacao",
+    "nome": "VSO_0000008",
+    "complementoTopico": ""
+   }],
+   "tipos": [{"tipo": "notificacao"}],
+   "situation": [{
+    "nomeSituation": "./situationsFilter/TemperaturaCorporeaSituationFilter.json",
+    "nomeTopico": "VSO_0000008"
+   }]
+  },
+  {
+   "ontologia": "./src/ontologia/msvhSchema.ttl",
+   "tipo_inferencia": [{"tipo": "regras"}],
+   "registrar": "OxygenSaturationMeasurementDatum",
+   "assinar": [{
+    "tipo": "notificacao",
+    "nome": "OxygenSaturationMeasurementDatum",
+    "complementoTopico": ""
+   }],
+   "tipos": [{"tipo": "notificacao"}],
+   "situation": [{
+    "nomeSituation": "./situationsFilter/SaturacaoOxigeneoSituation.json",
+    "nomeTopico": "OxygenSaturationMeasurementDatum"
+   }]
+  },
+  {
+   "ontologia": "./src/ontologia/msvhSchema.ttl",
+   "tipo_inferencia": [{"tipo": "regras"}],
+   "registrar": "VSO_0000035",
+   "assinar": [{
+    "tipo": "notificacao",
+    "nome": "VSO_0000035",
+    "complementoTopico": ""
+   }],
+   "tipos": [{"tipo": "notificacao"}],
+   "situation": [{
+    "nomeSituation": "./situationsFilter/FrequenciaRespiratoriaSituationFilter.json",
+    "nomeTopico": "VSO_0000035"
+   }]
+  },
+  {
+   "ontologia": "./src/ontologia/ponto_medico_com_individuos.ttl",
+   "tipo_inferencia": [{"tipo": "regras"}],
+   "registrar": "ponto",
+   "assinar": [{
+    "tipo": "notificacao",
+    "nome": "ponto",
+    "complementoTopico": ""
+   }],
+   "tipos": [{"tipo": "notificacao"}],
+   "situation": [{
+    "nomeSituation": "./situationsFilter/PontoMedicoSitutationFilter.json",
+    "nomeTopico": "ponto"
+   }]
+  },
+  {
+   "ontologia": "",
+   "tipo_inferencia": [],
+   "registrar": "createFilter",
+   "assinar": [{
+    "tipo": "filtragem",
+    "nome": "createFilter",
+    "complementoTopico": ""
+   }],
+   "tipos": [{"tipo": "filtragem"}]
+  },
+  {
+   "ontologia": "",
+   "tipo_inferencia": [],
+   "registrar": "tipo_inferencia",
+   "assinar": [{
+    "tipo": "configuracao",
+    "nome": "tipo_inferencia",
+    "complementoTopico": ""
+   }],
+   "tipos": [{"tipo": "configuracao"}],
+   "situation": []
+  }
+ ]
+}

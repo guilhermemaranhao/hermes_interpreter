@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1426344983908" name="http://linkserver.icmc.usp.br/ckonto/activity" uri="activity.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1426344983908" name="http://linkserver.icmc.usp.br/ckonto/actor" uri="actor.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1426344983908" name="http://linkserver.icmc.usp.br/ckonto/device" uri="device.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1426344983908" name="http://linkserver.icmc.usp.br/ckonto/role" uri="role.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1426344983908" name="http://linkserver.icmc.usp.br/ckonto/sEvent" uri="sEvent.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1426344983908" name="http://linkserver.icmc.usp.br/ckonto/spatial" uri="spatial.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1426344983908" name="http://linkserver.icmc.usp.br/ckonto/tEvent" uri="tEvent.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1426344983908" name="http://linkserver.icmc.usp.br/ckonto/time" uri="time.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1426344983908" name="http://swrl.stanford.edu/ontologies/examples/family.swrl.owl" uri="family.swrl.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1426344983908" name="http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl" uri="MonitorSinalVital.owl"/>
+    </group>
+</catalog>

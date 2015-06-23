@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="http://linkserver.icmc.usp.br/ckonto/role#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:act="http://linkserver.icmc.usp.br/ckonto/actor#"
+  xml:base="http://linkserver.icmc.usp.br/ckonto/role">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This ontology describes roles a person can take.</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:ID="StudentGroup">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Group composed of students. All members of a StudentGroup has social role as Student.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#PersonGroup"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Role"/>
+  <owl:Class rdf:ID="Student">
+    <rdfs:subClassOf rdf:resource="#Role"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An occupation level where people study at an academic institution.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Employee">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An occupation level where people work for an organization.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Role"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="studiesAt">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The relationship between a student and a university.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Student"/>
+    <rdfs:range rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Organization"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="employs">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="worksFor"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Organization"/>
+    <rdfs:range rdf:resource="#Employee"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSocialRole">
+    <rdfs:domain rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Actor"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The relationship bewteen an Actor and a Social Role.</rdfs:comment>
+    <rdfs:range rdf:resource="#Role"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#worksFor">
+    <rdfs:range rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Organization"/>
+    <rdfs:domain rdf:resource="#Employee"/>
+    <owl:inverseOf rdf:resource="#employs"/>
+  </owl:ObjectProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 1.3, Build 225.4)  http://protege.stanford.edu -->

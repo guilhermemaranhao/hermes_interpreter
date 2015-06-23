@@ -1,0 +1,160 @@
+{"topicos": [
+ {
+  "assinar": [{
+   "complementoTopico": "VSO_0000005",
+   "nome": "VSO_0000005"
+  }],
+  "tipo_inferencia": [{"tipo": "ontology"}],
+  "registrar": "VSO_0000005",
+  "tipo": "notificacao",
+  "objetos_negocio": [{
+   "nomeTopico": "VSO_0000005",
+   "nomeObjetoNegocio": "br.ufg.inf.mestrado.hermesinterpreter.situations.PressaoSanguineaInterpretarSituation"
+  }],
+  "defaultnamespace": "http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#",
+  "publicar": [
+   {
+    "complementoTopico": "HypotensionBloodPressureAlarm",
+    "nome": "VSO_0000005"
+   },
+   {
+    "complementoTopico": "IsolatedSystolicHypertensionAlarm",
+    "nome": "VSO_0000005"
+   },
+   {
+    "complementoTopico": "Stage1HypertensionAlarm",
+    "nome": "VSO_0000005"
+   },
+   {
+    "complementoTopico": "Stage2HypertensionAlarm",
+    "nome": "VSO_0000005"
+   },
+   {
+    "complementoTopico": "Stage3HypertensionAlarm",
+    "nome": "VSO_0000005"
+   }
+  ]
+ },
+ {
+  "assinar": [{
+   "complementoTopico": "OxygenSaturationMeasurementDatum",
+   "nome": "OxygenSaturationMeasurementDatum"
+  }],
+  "tipo_inferencia": [{"tipo": "rules"}],
+  "registrar": "OxygenSaturationMeasurementDatum",
+  "tipo": "notificacao",
+  "objetos_negocio": [{
+   "nomeTopico": "OxygenSaturationMeasurementDatum",
+   "nomeObjetoNegocio": "br.ufg.inf.mestrado.hermesinterpreter.situations.SaturacaoOxigeneoSituation"
+  }],
+  "defaultnamespace": "http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#",
+  "publicar": [{
+   "complementoTopico": "HypoxemiaAlarm",
+   "nome": "OxygenSaturationMeasurementDatum"
+  }]
+ },
+ {
+  "assinar": [{
+   "complementoTopico": "VSO_0000030",
+   "nome": "VSO_0000030"
+  }],
+  "tipo_inferencia": [{"tipo": "rules"}],
+  "registrar": "VSO_0000030",
+  "tipo": "notificacao",
+  "objetos_negocio": [{
+   "nomeTopico": "VSO_0000030",
+   "nomeObjetoNegocio": "br.ufg.inf.mestrado.hermesinterpreter.situations.FrequenciaPulsoInterpreterSituation"
+  }],
+  "defaultnamespace": "http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#",
+  "publicar": [
+   {
+    "complementoTopico": "bradycardiaAlarm",
+    "nome": "VSO_0000030"
+   },
+   {
+    "complementoTopico": "tachycardiaAlarm",
+    "nome": "VSO_0000030"
+   }
+  ]
+ },
+ {
+  "assinar": [{
+   "complementoTopico": "VSO_0000035",
+   "nome": "VSO_0000035"
+  }],
+  "tipo_inferencia": [{"tipo": "rules"}],
+  "registrar": "VSO_0000035",
+  "tipo": "notificacao",
+  "objetos_negocio": [{
+   "nomeTopico": "VSO_0000035",
+   "nomeObjetoNegocio": "br.ufg.inf.mestrado.hermesinterpreter.situations.FrequenciaRespiratoriaInterpreterSituation"
+  }],
+  "defaultnamespace": "http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#",
+  "publicar": [
+   {
+    "complementoTopico": "ApneaAlarm",
+    "nome": "VSO_0000035"
+   },
+   {
+    "complementoTopico": "BradypneaAlarm",
+    "nome": "VSO_0000035"
+   },
+   {
+    "complementoTopico": "TachypneaAlarm",
+    "nome": "VSO_0000035"
+   }
+  ]
+ },
+ {
+  "assinar": [{
+   "complementoTopico": "VSO_0000008",
+   "nome": "VSO_0000008"
+  }],
+  "tipo_inferencia": [{"tipo": "rules"}],
+  "registrar": "VSO_0000008",
+  "tipo": "notificacao",
+  "objetos_negocio": [{
+   "nomeTopico": "VSO_0000008",
+   "nomeObjetoNegocio": "br.ufg.inf.mestrado.hermesinterpreter.situations.TemperaturaCorporeaInterpreterSituation"
+  }],
+  "defaultnamespace": "http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#",
+  "publicar": [
+   {
+    "complementoTopico": "HighFeverAlarm",
+    "nome": "VSO_0000008"
+   },
+   {
+    "complementoTopico": "LowFeverAlarm",
+    "nome": "VSO_0000008"
+   },
+   {
+    "complementoTopico": "MildHypothermiaAlarm",
+    "nome": "VSO_0000008"
+   },
+   {
+    "complementoTopico": "ModerateFeverAlarm",
+    "nome": "VSO_0000008"
+   },
+   {
+    "complementoTopico": "ModerateHypothermiaAlarm",
+    "nome": "VSO_0000008"
+   },
+   {
+    "complementoTopico": "SevereHypothermiaAlarm",
+    "nome": "VSO_0000008"
+   }
+  ]
+ },
+ {
+  "assinar": [{
+   "complementoTopico": "",
+   "nome": "tipo_inferencia"
+  }],
+  "tipo_inferencia": [],
+  "registrar": "tipo_inferencia",
+  "tipo": "configuracao",
+  "objetos_negocio": [],
+  "defaultnamespace": "",
+  "publicar": []
+ }
+]}

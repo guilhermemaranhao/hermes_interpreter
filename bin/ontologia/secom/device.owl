@@ -1,0 +1,1492 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://linkserver.icmc.usp.br/ckonto/device#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xml:base="http://linkserver.icmc.usp.br/ckonto/device">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="Modem">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Battery"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="VideoCaptureCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="MainMemory"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="SecondaryStorage"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="HardwareComponent"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Pointer"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Display"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="CPU"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="AudioInterfaceCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="NetworkInterfaceCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="GraphicsCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Keyboard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Printing"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#NetworkInterfaceCard">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#GraphicsCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Battery"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CPU"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MainMemory"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Display"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#VideoCaptureCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SecondaryStorage"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#HardwareComponent"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#Modem"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Pointer"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Keyboard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Printing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AudioInterfaceCard"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="IrDACard">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="WirelessCard"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >0</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="MACProtocolSupport"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MagneticMediaDrive">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="MagneticMedia"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="storageMedia"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="OpticalMediaDrive"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SecondaryStorage"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DeviceComponent"/>
+  <owl:Class rdf:about="#MagneticMedia">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="OpticalMedia"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="StorageMedia"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Printing">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Battery"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#GraphicsCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CPU"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#NetworkInterfaceCard"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Display"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#VideoCaptureCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SecondaryStorage"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Modem"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MainMemory"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Pointer"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#HardwareComponent"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AudioInterfaceCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Keyboard"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="NonWirelessCard">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</owl:hasValue>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="isWirelessEnabled"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#NetworkInterfaceCard"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <MACProtocol rdf:ID="IEEE_802.3"/>
+              <MACProtocol rdf:ID="IEEE_802.3ab"/>
+              <MACProtocol rdf:ID="IEEE_802.3ae"/>
+              <MACProtocol rdf:ID="IEEE_802.3u"/>
+              <MACProtocol rdf:ID="IEEE_802.3z"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#MACProtocolSupport"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Battery">
+    <owl:disjointWith rdf:resource="#Modem"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#VideoCaptureCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CPU"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#NetworkInterfaceCard"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Keyboard"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Printing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AudioInterfaceCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MainMemory"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#GraphicsCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Display"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Pointer"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#HardwareComponent"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SecondaryStorage"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#HardwareComponent">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="SoftwareComponent"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#DeviceComponent"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Display">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#GraphicsCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Modem"/>
+    <owl:disjointWith rdf:resource="#NetworkInterfaceCard"/>
+    <rdfs:subClassOf rdf:resource="#HardwareComponent"/>
+    <owl:disjointWith rdf:resource="#Battery"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#VideoCaptureCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Printing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CPU"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SecondaryStorage"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AudioInterfaceCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MainMemory"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Keyboard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Pointer"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#GraphicsCard">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CPU"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#NetworkInterfaceCard"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MainMemory"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SecondaryStorage"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Modem"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Pointer"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Keyboard"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Printing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AudioInterfaceCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Display"/>
+    <rdfs:subClassOf rdf:resource="#HardwareComponent"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#VideoCaptureCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Battery"/>
+  </owl:Class>
+  <owl:Class rdf:about="#OpticalMedia">
+    <owl:disjointWith rdf:resource="#MagneticMedia"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <OpticalMedia rdf:ID="CD"/>
+          <OpticalMedia rdf:ID="DVD"/>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="#StorageMedia"/>
+  </owl:Class>
+  <owl:Class rdf:about="#VideoCaptureCard">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AudioInterfaceCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Keyboard"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#HardwareComponent"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CPU"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#NetworkInterfaceCard"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Pointer"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MainMemory"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Modem"/>
+    <owl:disjointWith rdf:resource="#Display"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SecondaryStorage"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#GraphicsCard"/>
+    <owl:disjointWith rdf:resource="#Printing"/>
+    <owl:disjointWith rdf:resource="#Battery"/>
+  </owl:Class>
+  <owl:Class rdf:about="#CPU">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SecondaryStorage"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#HardwareComponent"/>
+    <owl:disjointWith rdf:resource="#NetworkInterfaceCard"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Pointer"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MainMemory"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Battery"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Keyboard"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AudioInterfaceCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#VideoCaptureCard"/>
+    <owl:disjointWith rdf:resource="#Printing"/>
+    <owl:disjointWith rdf:resource="#Display"/>
+    <owl:disjointWith rdf:resource="#GraphicsCard"/>
+    <owl:disjointWith rdf:resource="#Modem"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CD_RW_Writer">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</owl:hasValue>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="canReadAndWrite"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#OpticalMediaDrive"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#storageMedia"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:resource="#CD"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Keyboard">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Pointer"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SecondaryStorage"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Battery"/>
+    <owl:disjointWith rdf:resource="#GraphicsCard"/>
+    <rdfs:subClassOf rdf:resource="#HardwareComponent"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AudioInterfaceCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Modem"/>
+    <owl:disjointWith rdf:resource="#Display"/>
+    <owl:disjointWith rdf:resource="#VideoCaptureCard"/>
+    <owl:disjointWith rdf:resource="#CPU"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MainMemory"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Printing"/>
+    <owl:disjointWith rdf:resource="#NetworkInterfaceCard"/>
+  </owl:Class>
+  <owl:Class rdf:ID="OperatingSystem">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="UserAgent"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SoftwareComponent"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Device"/>
+  <owl:Class rdf:ID="DVD_R_Drive">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#storageMedia"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:resource="#DVD"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#OpticalMediaDrive"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="#canReadAndWrite"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MACProtocol">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <MACProtocol rdf:ID="IEEE_802.11a"/>
+          <MACProtocol rdf:ID="IEEE_802.11b"/>
+          <MACProtocol rdf:ID="IEEE_802.11g"/>
+          <MACProtocol rdf:about="#IEEE_802.3"/>
+          <MACProtocol rdf:about="#IEEE_802.3ab"/>
+          <MACProtocol rdf:about="#IEEE_802.3ae"/>
+          <MACProtocol rdf:about="#IEEE_802.3u"/>
+          <MACProtocol rdf:about="#IEEE_802.3z"/>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="CD_R_Drive">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="#canReadAndWrite"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#OpticalMediaDrive"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#storageMedia"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:resource="#CD"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#UserAgent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SoftwareComponent"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#OperatingSystem"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Pointer">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AudioInterfaceCard"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#HardwareComponent"/>
+    <owl:disjointWith rdf:resource="#Battery"/>
+    <owl:disjointWith rdf:resource="#GraphicsCard"/>
+    <owl:disjointWith rdf:resource="#VideoCaptureCard"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MainMemory"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#NetworkInterfaceCard"/>
+    <owl:disjointWith rdf:resource="#Display"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SecondaryStorage"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#CPU"/>
+    <owl:disjointWith rdf:resource="#Printing"/>
+    <owl:disjointWith rdf:resource="#Modem"/>
+    <owl:disjointWith rdf:resource="#Keyboard"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SecondaryStorage">
+    <owl:disjointWith rdf:resource="#CPU"/>
+    <rdfs:subClassOf rdf:resource="#HardwareComponent"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MainMemory"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#VideoCaptureCard"/>
+    <owl:disjointWith rdf:resource="#Battery"/>
+    <owl:disjointWith rdf:resource="#NetworkInterfaceCard"/>
+    <owl:disjointWith rdf:resource="#GraphicsCard"/>
+    <owl:disjointWith rdf:resource="#Printing"/>
+    <owl:disjointWith rdf:resource="#Modem"/>
+    <owl:disjointWith rdf:resource="#Display"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AudioInterfaceCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Pointer"/>
+    <owl:disjointWith rdf:resource="#Keyboard"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SoftwareComponent">
+    <owl:disjointWith rdf:resource="#HardwareComponent"/>
+    <rdfs:subClassOf rdf:resource="#DeviceComponent"/>
+  </owl:Class>
+  <owl:Class rdf:ID="WiFiCard">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#MACProtocolSupport"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <MACProtocol rdf:about="#IEEE_802.11a"/>
+              <MACProtocol rdf:about="#IEEE_802.11b"/>
+              <MACProtocol rdf:about="#IEEE_802.11g"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#WirelessCard"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="HardDiskDrive">
+    <rdfs:subClassOf rdf:resource="#MagneticMediaDrive"/>
+  </owl:Class>
+  <owl:Class rdf:about="#OpticalMediaDrive">
+    <rdfs:subClassOf rdf:resource="#SecondaryStorage"/>
+    <owl:disjointWith rdf:resource="#MagneticMediaDrive"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#OpticalMedia"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#storageMedia"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DVD_RW_Writer">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#storageMedia"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:resource="#DVD"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#OpticalMediaDrive"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="#canReadAndWrite"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="BluetoothCard">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#WirelessCard"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >0</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#MACProtocolSupport"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#WirelessCard">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</owl:hasValue>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="#isWirelessEnabled"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#NetworkInterfaceCard"/>
+  </owl:Class>
+  <owl:Class rdf:about="#MainMemory">
+    <owl:disjointWith rdf:resource="#CPU"/>
+    <rdfs:subClassOf rdf:resource="#HardwareComponent"/>
+    <owl:disjointWith rdf:resource="#Battery"/>
+    <owl:disjointWith rdf:resource="#GraphicsCard"/>
+    <owl:disjointWith rdf:resource="#SecondaryStorage"/>
+    <owl:disjointWith rdf:resource="#Keyboard"/>
+    <owl:disjointWith rdf:resource="#VideoCaptureCard"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AudioInterfaceCard"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Modem"/>
+    <owl:disjointWith rdf:resource="#Display"/>
+    <owl:disjointWith rdf:resource="#Pointer"/>
+    <owl:disjointWith rdf:resource="#NetworkInterfaceCard"/>
+    <owl:disjointWith rdf:resource="#Printing"/>
+  </owl:Class>
+  <owl:Class rdf:about="#AudioInterfaceCard">
+    <owl:disjointWith rdf:resource="#SecondaryStorage"/>
+    <owl:disjointWith rdf:resource="#CPU"/>
+    <owl:disjointWith rdf:resource="#GraphicsCard"/>
+    <owl:disjointWith rdf:resource="#Battery"/>
+    <owl:disjointWith rdf:resource="#NetworkInterfaceCard"/>
+    <owl:disjointWith rdf:resource="#Display"/>
+    <owl:disjointWith rdf:resource="#Printing"/>
+    <owl:disjointWith rdf:resource="#VideoCaptureCard"/>
+    <rdfs:subClassOf rdf:resource="#HardwareComponent"/>
+    <owl:disjointWith rdf:resource="#Keyboard"/>
+    <owl:disjointWith rdf:resource="#Modem"/>
+    <owl:disjointWith rdf:resource="#Pointer"/>
+    <owl:disjointWith rdf:resource="#MainMemory"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#storageMedia">
+    <rdfs:range rdf:resource="#StorageMedia"/>
+    <rdfs:domain rdf:resource="#SecondaryStorage"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="operatingSystemCompatible">
+    <rdfs:domain rdf:resource="#HardwareComponent"/>
+    <rdfs:range rdf:resource="#OperatingSystem"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#MACProtocolSupport">
+    <rdfs:domain rdf:resource="#NetworkInterfaceCard"/>
+    <rdfs:range rdf:resource="#MACProtocol"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isPartOfDevice">
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:ID="hasDeviceComponent"/>
+    </owl:inverseOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="#Device"/>
+    <rdfs:domain rdf:resource="#DeviceComponent"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="screenSize">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Display"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="inputCharSetSupported">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Keyboard"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isVoiceInputCapable">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#Device"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="MIMETypesSupported">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#SoftwareComponent"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="audioInputEncoderSupported">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#AudioInterfaceCard"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="screenSizeCharWidth">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:ID="screenSizeChar"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="storageCapacity">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#SecondaryStorage"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="softwareName">
+    <rdfs:domain rdf:resource="#SoftwareComponent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="deviceModel">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Device"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="defaultGatewayAddress">
+    <rdfs:domain rdf:resource="#NetworkInterfaceCard"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="HTMLVersionSupported">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >2.0</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >3.2</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >4.01</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >4.0</rdf:first>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#UserAgent"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="downloadableSoftwareSupport">
+    <rdfs:domain rdf:resource="#SoftwareComponent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isJavaAppletEnabled">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#UserAgent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="paperSize">
+    <rdfs:domain rdf:resource="#Printing"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >A3</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >A2</rdf:first>
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >A5</rdf:first>
+                      <rdf:rest rdf:parseType="Resource">
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >A6</rdf:first>
+                        <rdf:rest rdf:parseType="Resource">
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >A7</rdf:first>
+                          <rdf:rest rdf:parseType="Resource">
+                            <rdf:rest rdf:parseType="Resource">
+                              <rdf:rest rdf:parseType="Resource">
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >A10</rdf:first>
+                                <rdf:rest rdf:parseType="Resource">
+                                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                  >US_Legal</rdf:first>
+                                  <rdf:rest rdf:parseType="Resource">
+                                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                    >US_Executive</rdf:first>
+                                    <rdf:rest rdf:parseType="Resource">
+                                      <rdf:rest rdf:parseType="Resource">
+                                        <rdf:rest rdf:parseType="Resource">
+                                          <rdf:first rdf:datatype=
+                                          "http://www.w3.org/2001/XMLSchema#string"
+                                          >Envelope_6X9</rdf:first>
+                                          <rdf:rest rdf:parseType="Resource">
+                                            <rdf:first rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >C6_C5_Envelope</rdf:first>
+                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                          </rdf:rest>
+                                        </rdf:rest>
+                                        <rdf:first rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >Envelope_No10</rdf:first>
+                                      </rdf:rest>
+                                      <rdf:first rdf:datatype=
+                                      "http://www.w3.org/2001/XMLSchema#string"
+                                      >DL_Envelope</rdf:first>
+                                    </rdf:rest>
+                                  </rdf:rest>
+                                </rdf:rest>
+                              </rdf:rest>
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >A9</rdf:first>
+                            </rdf:rest>
+                            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >A8</rdf:first>
+                          </rdf:rest>
+                        </rdf:rest>
+                      </rdf:rest>
+                    </rdf:rest>
+                  </rdf:rest>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >A1</rdf:first>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >A0</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >US_Letter</rdf:first>
+            </rdf:rest>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >A4</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="videoOutputEncoderSupported">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#VideoCaptureCard"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="meanConsumptionDuration">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+    <rdfs:domain rdf:resource="#Battery"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="radioOutputPower">
+    <rdfs:domain rdf:resource="#BluetoothCard"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="printingResolution">
+    <rdfs:domain rdf:resource="#Printing"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="pixelAspectRatio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Display"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="softwareVersion">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#SoftwareComponent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="bluetoothVersionCompatibility">
+    <rdfs:domain rdf:resource="#BluetoothCard"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="cpuFrequency">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#CPU"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="framesPerSecondSupported">
+    <rdfs:domain rdf:resource="#VideoCaptureCard"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="IPAddress">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#NetworkInterfaceCard"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="screenHeightSize">
+    <rdfs:subPropertyOf rdf:resource="#screenSize"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="analogVideoInputSupported">
+    <rdfs:domain rdf:resource="#VideoCaptureCard"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >CVBS</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >S-Video</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isImageCapable">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#UserAgent"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="TVDecoderSupported">
+    <rdfs:domain rdf:resource="#VideoCaptureCard"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >PAL</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >SECAM</rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:rest>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >NTSC</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="downloadableBrowserApps">
+    <rdfs:subPropertyOf rdf:resource="#downloadableSoftwareSupport"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="internalCacheSize">
+    <rdfs:domain rdf:resource="#CPU"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="numberOfRPM">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="#HardDiskDrive"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="transferEncodingSupported">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#SoftwareComponent"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="MACProtocolSupported">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >802.11a</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >802.3u</rdf:first>
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >802.3ab</rdf:first>
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >802.3z</rdf:first>
+                      <rdf:rest rdf:parseType="Resource">
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >802.3ae</rdf:first>
+                      </rdf:rest>
+                    </rdf:rest>
+                  </rdf:rest>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >802.3</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >802.11g</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >802.11b</rdf:first>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="javaPlatformsSupported">
+    <rdfs:domain rdf:resource="#SoftwareComponent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="XHTMLVersionSupported">
+    <rdfs:domain rdf:resource="#UserAgent"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1.1</rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >1.0</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isFramesCapable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#UserAgent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="cpuType">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#CPU"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isJavaScriptEnabled">
+    <rdfs:domain rdf:resource="#UserAgent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="acceptDownloadableSoftware">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#SoftwareComponent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="samplingRateSupported">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#AudioInterfaceCard"/>
+          <owl:Class rdf:about="#VideoCaptureCard"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="bitsPerPixel">
+    <rdfs:domain rdf:resource="#GraphicsCard"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >4</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >32</rdf:first>
+                  </rdf:rest>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >16</rdf:first>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >8</rdf:first>
+              </rdf:rest>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >2</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >1</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="outpurCharSetSupported">
+    <rdfs:domain rdf:resource="#Keyboard"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="bitsPerSamplingSupported">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#VideoCaptureCard"/>
+          <owl:Class rdf:about="#AudioInterfaceCard"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="NonWirelessProtocol">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Ethernet</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Fast_Ethernet</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Gigabit_Ethernet</rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="subNetMask">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#NetworkInterfaceCard"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="graphicsMemorySize">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#GraphicsCard"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="pointingResolution">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Character</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Line</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Pixel</rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Pointer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="maxSpeedSupported">
+    <rdfs:domain rdf:resource="#Modem"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isActive">
+    <rdfs:domain rdf:resource="#NetworkInterfaceCard"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="XHTMLModuleSupported">
+    <rdfs:domain rdf:resource="#UserAgent"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Text_Extension</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Frames</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >Image</rdf:first>
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:rest rdf:parseType="Resource">
+                        <rdf:rest rdf:parseType="Resource">
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >Server_Side_Image_Map</rdf:first>
+                          <rdf:rest rdf:parseType="Resource">
+                            <rdf:rest rdf:parseType="Resource">
+                              <rdf:rest rdf:parseType="Resource">
+                                <rdf:rest rdf:parseType="Resource">
+                                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                  >Intrinsic_Events</rdf:first>
+                                  <rdf:rest rdf:parseType="Resource">
+                                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                    >Metainformation</rdf:first>
+                                    <rdf:rest rdf:parseType="Resource">
+                                      <rdf:rest rdf:parseType="Resource">
+                                        <rdf:first rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >Style_Sheet</rdf:first>
+                                        <rdf:rest rdf:parseType="Resource">
+                                          <rdf:rest rdf:parseType="Resource">
+                                            <rdf:first rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >Link</rdf:first>
+                                            <rdf:rest rdf:parseType="Resource">
+                                              <rdf:rest rdf:parseType="Resource">
+                                                <rdf:first rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#string"
+                                                >Name_Identification</rdf:first>
+                                                <rdf:rest rdf:parseType="Resource">
+                                                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                  <rdf:first rdf:datatype=
+                                                  "http://www.w3.org/2001/XMLSchema#string"
+                                                  >Legacy</rdf:first>
+                                                </rdf:rest>
+                                              </rdf:rest>
+                                              <rdf:first rdf:datatype=
+                                              "http://www.w3.org/2001/XMLSchema#string"
+                                              >Base</rdf:first>
+                                            </rdf:rest>
+                                          </rdf:rest>
+                                          <rdf:first rdf:datatype=
+                                          "http://www.w3.org/2001/XMLSchema#string"
+                                          >Style_Attribute</rdf:first>
+                                        </rdf:rest>
+                                      </rdf:rest>
+                                      <rdf:first rdf:datatype=
+                                      "http://www.w3.org/2001/XMLSchema#string"
+                                      >Scripting</rdf:first>
+                                    </rdf:rest>
+                                  </rdf:rest>
+                                </rdf:rest>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >Target</rdf:first>
+                              </rdf:rest>
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >Iframe</rdf:first>
+                            </rdf:rest>
+                            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Object</rdf:first>
+                          </rdf:rest>
+                        </rdf:rest>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Client_Side_Image_Map</rdf:first>
+                      </rdf:rest>
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >Table</rdf:first>
+                    </rdf:rest>
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Forms</rdf:first>
+                  </rdf:rest>
+                </rdf:rest>
+              </rdf:rest>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Applet</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Core</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="javaScriptVersionSupported">
+    <rdfs:domain rdf:resource="#UserAgent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="screenSizeCharHeight">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#screenSizeChar"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="printingLayout">
+    <rdfs:domain rdf:resource="#Printing"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >2_pages_to_1</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >4_pages_to_1</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Folded</rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:rest>
+            </rdf:rest>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Plain</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="documentLanguageSupported">
+    <rdfs:domain rdf:resource="#SoftwareComponent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#screenSizeChar">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Display"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="colorCapability">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Display"/>
+          <owl:Class rdf:about="#Printing"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Limited</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >Binary</rdf:first>
+                </rdf:rest>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Grey</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Mapped</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Full</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="storageFreeCapacity">
+    <rdfs:domain rdf:resource="#SecondaryStorage"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="charSetSupported">
+    <rdfs:domain rdf:resource="#SoftwareComponent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="JVMInstalled">
+    <rdfs:domain rdf:resource="#SoftwareComponent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="paperOrientation">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Portrait</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Landscape</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Printing"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="screenWidthSize">
+    <rdfs:subPropertyOf rdf:resource="#screenSize"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isStereoEnabled">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#AudioInterfaceCard"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isSoundOutputCapable">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#Device"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:ID="isFaxEnabled">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#Modem"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="keyboardType">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >PhoneKeypad</rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Disambiguating</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Querty</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Keyboard"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="has3DAudioSupport">
+    <rdfs:domain rdf:resource="#AudioInterfaceCard"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="preferenceForFrames">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#UserAgent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="MACAddress">
+    <rdfs:domain rdf:resource="#NetworkInterfaceCard"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="irdaSpeedRate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#IrDACard"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="mainMemoryFreeSize">
+    <rdfs:domain rdf:resource="#MainMemory"/>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:ID="mainMemorySize"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasStaticIPAddress">
+    <rdfs:domain rdf:resource="#NetworkInterfaceCard"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="isTextInputCapable">
+    <rdfs:domain rdf:resource="#Device"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="isSoftKeysCapable">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#Keyboard"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="deviceStatusOn">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#Device"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="pixelsPerLineSupported">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="#VideoCaptureCard"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="isFullyCharged">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#Battery"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#mainMemorySize">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#MainMemory"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="automaticTVStdDetection">
+    <rdfs:domain rdf:resource="#VideoCaptureCard"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="maxRadiusRange">
+    <rdfs:domain rdf:resource="#BluetoothCard"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="numberOfSoftKeys">
+    <rdfs:domain rdf:resource="#Keyboard"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="componentModelName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#HardwareComponent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#isWirelessEnabled">
+    <rdfs:domain rdf:resource="#NetworkInterfaceCard"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="isJavaEnabled">
+    <rdfs:domain rdf:resource="#SoftwareComponent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="isTablesCapable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#UserAgent"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="powerAvailable">
+    <rdfs:domain rdf:resource="#Battery"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#canReadAndWrite">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#OpticalMediaDrive"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="frequencyBand">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#BluetoothCard"/>
+  </owl:FunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="#hasDeviceComponent">
+    <rdfs:domain rdf:resource="#Device"/>
+    <rdfs:range rdf:resource="#DeviceComponent"/>
+    <owl:inverseOf rdf:resource="#isPartOfDevice"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:InverseFunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 1.3, Build 225.4)  http://protege.stanford.edu -->

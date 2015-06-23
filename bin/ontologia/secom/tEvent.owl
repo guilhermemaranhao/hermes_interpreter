@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:time="http://linkserver.icmc.usp.br/ckonto/time#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:time-entry="http://www.isi.edu/~pan/damltime/time-entry.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://linkserver.icmc.usp.br/ckonto/tEvent#"
+  xml:base="http://linkserver.icmc.usp.br/ckonto/tEvent">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This ontology handles information about events.</rdfs:comment>
+    <owl:imports rdf:resource="http://linkserver.icmc.usp.br/ckonto/time"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="FrequencyDescription">
+    <rdfs:subClassOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/time#IntervalThing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TemporalEvent">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="InstantEvent"/>
+          <owl:Class rdf:ID="IntervalEvent"/>
+        </owl:unionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/time#TemporalThing"/>
+  </owl:Class>
+  <owl:Class rdf:about="#InstantEvent">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >0</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="eventDuration"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/time#InstantThing"/>
+    <rdfs:subClassOf rdf:resource="#TemporalEvent"/>
+  </owl:Class>
+  <owl:Class rdf:about="#IntervalEvent">
+    <rdfs:subClassOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/time#IntervalThing"/>
+    <rdfs:subClassOf rdf:resource="#TemporalEvent"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="repeatingDuration">
+    <rdfs:domain rdf:resource="#FrequencyDescription"/>
+    <rdfs:range rdf:resource="http://linkserver.icmc.usp.br/ckonto/time#DurationDescription"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="dueDateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:ID="endDateTime"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#eventDuration">
+    <rdfs:domain rdf:resource="#TemporalEvent"/>
+    <rdfs:range rdf:resource="http://linkserver.icmc.usp.br/ckonto/time#DurationDescription"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="startDateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#TemporalEvent"/>
+    <rdfs:range rdf:resource="http://linkserver.icmc.usp.br/ckonto/time#InstantThing"/>
+    <owl:equivalentProperty rdf:resource="http://linkserver.icmc.usp.br/ckonto/time#beginPointOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="eventFrequency">
+    <rdfs:range rdf:resource="#FrequencyDescription"/>
+    <rdfs:domain rdf:resource="#TemporalEvent"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="isPeriodic">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Whether it is periodic or not.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#TemporalEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:about="#endDateTime">
+    <owl:equivalentProperty rdf:resource="http://linkserver.icmc.usp.br/ckonto/time#endPointOf"/>
+    <rdfs:domain rdf:resource="#TemporalEvent"/>
+    <rdfs:range rdf:resource="http://linkserver.icmc.usp.br/ckonto/time#InstantThing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="numberOfTimes">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The number of times an event recurs after every interval of time</rdfs:comment>
+    <rdfs:domain rdf:resource="#FrequencyDescription"/>
+  </owl:FunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 1.3, Build 225.4)  http://protege.stanford.edu -->
+
+
+
+
+
+
+

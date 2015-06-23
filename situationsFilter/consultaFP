@@ -1,0 +1,53 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX activity: <http://linkserver.icmc.usp.br/ckonto/activity#> 
+PREFIX actor: <http://linkserver.icmc.usp.br/ckonto/actor#> 
+PREFIX msvh: <http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#> 
+construct { 
+?x rdf:type msvh:MonitoringPulseRate . 
+?x msvh:hasMonitoringPulseRate ?monitoring . 
+?medida msvh:isMeasurementPulseRate ?monitoring . 
+?medida msvh:valuePulseRate ?taxa_pulso .  
+?x activity:hasParticipant ?y . 
+?y msvh:hasRole msvh:patient . 
+?y actor:hasBirthday ?data_nascimento . 
+?med rdf:type ?sub_alarme .  
+} 
+where 
+{ 
+?x rdf:type msvh:MonitoringPulseRate . 
+?x msvh:hasMonitoringPulseRate ?monitoring . 
+?medida msvh:isMeasurementPulseRate ?monitoring . 
+?medida msvh:valuePulseRate ?taxa_pulso . 
+filter(?taxa_pulso >= "100"^^<http://www.w3.org/2001/XMLSchema#int> ) . 
+?x activity:hasParticipant ?y . 
+?y msvh:hasRole msvh:patient . 
+?y actor:hasBirthday ?data_nascimento .
+filter(?data_nascimento <= "1974-12-08"^^<http://www.w3.org/2001/XMLSchema#date>) .  
+{  
+?x msvh:hasMonitoringPulseRate ?m . 
+?m msvh:hasMeasurementPulseRate ?med . 
+?med rdf:type msvh:BradyCardiaAlarm . 
+?sub_alarme rdfs:subClassOf msvh:PulseRateAlarm . 
+?med rdf:type ?sub_alarme .  
+}  
+union  
+{  
+{  
+?x msvh:hasMonitoringPulseRate ?monitoring . 
+?medida msvh:isMeasurementPulseRate ?monitoring . 
+?medida msvh:valuePulseRate ?taxa_pulso . 
+filter(?taxa_pulso >= "100"^^<http://www.w3.org/2001/XMLSchema#int> ) . 
+?x activity:hasParticipant ?y . 
+?y msvh:hasRole msvh:patient . 
+?y actor:hasBirthday ?data_nascimento .
+filter(?data_nascimento <= "1974-12-08"^^<http://www.w3.org/2001/XMLSchema#date>) .  
+}  
+?x msvh:hasMonitoringPulseRate ?m . 
+?m msvh:hasMeasurementPulseRate ?med . 
+?med rdf:type msvh:TachycardiaAlarm . 
+?sub_alarme rdfs:subClassOf msvh:PulseRateAlarm . 
+?med rdf:type ?sub_alarme .  
+} 
+}

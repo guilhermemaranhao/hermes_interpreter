@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://linkserver.icmc.usp.br/ckonto/actor#"
+     xml:base="http://linkserver.icmc.usp.br/ckonto/actor"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://linkserver.icmc.usp.br/ckonto/actor">
+        <rdfs:comment rdf:datatype="&xsd;string">This ontology describes actors, entities that perform some action (eg. person, group, software -- foaf:Agent).</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#hasGroupMember -->
+
+    <owl:ObjectProperty rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#hasGroupMember">
+        <rdfs:comment rdf:datatype="&xsd;string">Indicates a member of a group (foaf:member).</rdfs:comment>
+        <rdfs:range rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Actor"/>
+        <rdfs:domain rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Group"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#isMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#isMemberOf">
+        <rdfs:domain rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Actor"/>
+        <rdfs:range rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Group"/>
+        <owl:inverseOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#hasGroupMember"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#isSubOrganizationOf -->
+
+    <owl:ObjectProperty rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#isSubOrganizationOf">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:range rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Organization"/>
+        <rdfs:domain rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#made -->
+
+    <owl:ObjectProperty rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#made">
+        <rdfs:domain rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Group"/>
+        <rdfs:range rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Person"/>
+        <owl:inverseOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#maker"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#maker -->
+
+    <owl:ObjectProperty rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#maker">
+        <rdfs:comment rdf:datatype="&xsd;string">inverse_of_made</rdfs:comment>
+        <rdfs:range rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Group"/>
+        <rdfs:domain rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#hasBirthday -->
+
+    <owl:DatatypeProperty rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#hasBirthday">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Person"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#hasFirstName -->
+
+    <owl:DatatypeProperty rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#hasFirstName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The first name of a person (foaf:firstname).</rdfs:comment>
+        <rdfs:domain rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#hasPersonName -->
+
+    <owl:DatatypeProperty rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#hasPersonName">
+        <rdfs:domain rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Actor"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#hasSurname -->
+
+    <owl:DatatypeProperty rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#hasSurname">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The surname of a person (foaf:surname).</rdfs:comment>
+        <rdfs:domain rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#Actor -->
+
+    <owl:Class rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#Actor"/>
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#CommercialOrganization -->
+
+    <owl:Class rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#CommercialOrganization">
+        <rdfs:subClassOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Organization"/>
+        <rdfs:comment rdf:datatype="&xsd;string">NonprofitOrganizationCommercial</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#EducationalOrganization -->
+
+    <owl:Class rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#EducationalOrganization">
+        <rdfs:subClassOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#GovernmentOrganization -->
+
+    <owl:Class rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#GovernmentOrganization">
+        <rdfs:subClassOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#Group -->
+
+    <owl:Class rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#Group">
+        <rdfs:subClassOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Actor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#hasGroupMember"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string">A collection of individual actors.  Each element of Group is a composite object made up of individual members (foaf:Group).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#NonprofitOrganization -->
+
+    <owl:Class rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#NonprofitOrganization">
+        <rdfs:subClassOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#Organization -->
+
+    <owl:Class rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#Organization">
+        <rdfs:subClassOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Actor"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Organization is an entity representing social institutions (foaf:Organization).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#Person -->
+
+    <owl:Class rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#Person">
+        <rdfs:subClassOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Actor"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The collection of all human beings (foaf:Person).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://linkserver.icmc.usp.br/ckonto/actor#PersonGroup -->
+
+    <owl:Class rdf:about="http://linkserver.icmc.usp.br/ckonto/actor#PersonGroup">
+        <rdfs:subClassOf rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Group"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#hasGroupMember"/>
+                <owl:allValuesFrom rdf:resource="http://linkserver.icmc.usp.br/ckonto/actor#Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string">Group made up of people.</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

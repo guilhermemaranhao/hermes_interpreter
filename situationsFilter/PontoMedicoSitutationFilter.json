@@ -1,0 +1,12 @@
+{
+	"construct":"PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX ponto: <http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl/2015/0/untitled-ontology-69#> construct { ?x rdf:type ponto:funcionario .",
+	"where":" where { ", "clausula_base":" ?x rdf:type ponto:funcionario .",
+	"conjuntos_filtro":[
+		{
+		"id":"1",
+		"clausulas":[
+			{"filtro":"nome_chefe", tipo_dado:"string", possui_classe_disjunta_no_filtro:false, possui_parametro:true, "construct":" ?x ponto:hasNome ?nome . ?x ponto:isLotado ?depto . ?depto ponto:hasNomeDepto ?nomeDepto . ?x ponto:hasChefe ?funcChefe . ?funcChefe ponto:hasNome ?nome_chefe . ?x ponto:hasPonto ?y . ?y rdf:type ponto:ponto . ?y ponto:hasDataHora ?data .", "clausula":" ?x ponto:hasNome ?nome . ?x ponto:isLotado ?depto . ?depto ponto:hasNomeDepto ?nomeDepto . ?x ponto:hasChefe ?funcChefe . ?funcChefe ponto:hasNome ?nome_chefe . ?x ponto:hasPonto ?y . ?y rdf:type ponto:ponto . ?y ponto:hasDataHora ?data .", "clausula_filtro":"", "tipo_inferencia":"ontologica"}
+			]
+		}
+	]
+}

@@ -1,0 +1,60 @@
+<rdf:RDF
+    xmlns:obo="http://purl.obolibrary.org/obo/"
+    xmlns:activity="http://linkserver.icmc.usp.br/ckonto/activity#"
+    xmlns:ontologia="file:src/ontologia/"
+    xmlns:j.0="http://www.buffalo.edu/~ag33/"
+    xmlns:time="http://linkserver.icmc.usp.br/ckonto/time#"
+    xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+    xmlns:actor="http://linkserver.icmc.usp.br/ckonto/actor#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:sEvent="file:src/ontologia/secom/sEvent#"
+    xmlns:spatial="file:src/ontologia/secom/spatial#"
+    xmlns:Ontology1361391792831="http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#"
+    xmlns:FMA="http://purl.org/obo/owl/FMA#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:OBO_REL="http://purl.org/obo/owl/OBO_REL#"
+    xmlns:tEvent="http://linkserver.icmc.usp.br/ckonto/tEvent#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" > 
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#radialPulseRate01">
+    <Ontology1361391792831:hasParameterizedValuePulseRate rdf:resource="http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#valuePulseRate01"/>
+    <OBO_REL:inheres_in rdf:resource="http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#radialArtery01"/>
+    <Ontology1361391792831:isParameterizedValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Ontology1361391792831:isParameterizedValue>
+    <rdf:type rdf:resource="http://www.buffalo.edu/~ag33/VSO_0000032"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#person132541">
+    <Ontology1361391792831:hasRole rdf:resource="http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#patient"/>
+    <actor:hasBirthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1970-12-05</actor:hasBirthday>
+    <Ontology1361391792831:hasSex rdf:datatype="http://www.w3.org/2001/XMLSchema#string">feminino</Ontology1361391792831:hasSex>
+    <actor:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">132541</actor:hasName>
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl">
+    <owl:imports rdf:resource="file:src/ontologia/VSO/vso.owl"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#mPulseRate01">
+    <tEvent:startDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-12-05T22:40:36</tEvent:startDateTime>
+    <activity:hasParticipant rdf:resource="http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#person132541"/>
+    <Ontology1361391792831:hasMonitoringPulseRate rdf:resource="http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#radialPulseRate01"/>
+    <activity:isPeriodicActivity rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</activity:isPeriodicActivity>
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#MonitoringPulseRate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#FreqPulso0">
+    <Ontology1361391792831:unitPulseRate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bpm</Ontology1361391792831:unitPulseRate>
+    <Ontology1361391792831:valuePulseRate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">120</Ontology1361391792831:valuePulseRate>
+    <Ontology1361391792831:isMeasurementPulseRate rdf:resource="http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#radialPulseRate01"/>
+    <rdf:type rdf:resource="http://www.buffalo.edu/~ag33/VSO_0000030"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#valuePulseRate01">
+    <Ontology1361391792831:unitParameterizedValuePulseRate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bpm</Ontology1361391792831:unitParameterizedValuePulseRate>
+    <Ontology1361391792831:valueMaximumPulseRate rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">110</Ontology1361391792831:valueMaximumPulseRate>
+    <Ontology1361391792831:valueMinimumPulseRate rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">70</Ontology1361391792831:valueMinimumPulseRate>
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/1/Ontology1361391792831.owl#PulseRate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+</rdf:RDF>

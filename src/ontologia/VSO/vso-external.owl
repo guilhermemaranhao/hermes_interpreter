@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/VSO#"
+     xml:base="http://purl.obolibrary.org/obo/vso.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ro="http://purl.obolibrary.org/obo/ro.owl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:PATO="http://purl.org/obo/owl/PATO#"
+     xmlns:GO="http://purl.org/obo/owl/GO#"
+     xmlns:FMA="http://purl.org/obo/owl/FMA#">
+    <owl:Ontology rdf:about="http://vital-sign-ontology.googlecode.com/svn/trunk/src/ontology/vso-external.owl">
+        <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This file is the MIREOT specification file - see http://obi-ontology.org/page/MIREOT</rdfs:comment>
+    </owl:Ontology>
+    
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000412"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+    <!-- http://purl.obolibrary.org/obo/OGMS_0000029 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OGMS_0000029">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000024"/>
+        <IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogms.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.obolibrary.org/obo/OGMS_0000024 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OGMS_0000024">
+        <IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogms.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000011 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000011">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000007"/>
+        <IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000109 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000109">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000027 -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000027">
+        <IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/PATO#PATO_0001025 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/PATO#PATO_0001025">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/PATO.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/PATO#PATO_0000161 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/PATO#PATO_0000161">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/PATO.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/GO#GO_0008015 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/GO#GO_0008015">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/GO.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/GO#GO_0065008 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/GO#GO_0065008">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/GO.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/GO#GO_0008217 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/GO#GO_0008217">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/GO.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/GO#GO_0002027 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/GO#GO_0002027">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/GO.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/GO#GO_0001659 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/GO#GO_0001659">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/GO.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_62955 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_62955">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_67473 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_67473">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_9670 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_9670">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/PATO#PATO_0000146 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/PATO#PATO_0000146">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/PATO.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_20394 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_20394">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_50720 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_50720">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_14160 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_14160">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_14161 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_14161">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_18211 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_18211">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_9533 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_9533">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_9556 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_9556">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_20292 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_20292">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_19982 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_19982">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_61734 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_61734">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_61464 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_61464">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_14598 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_14598">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_49650 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_49650">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_49549 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_49549">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_3939 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_3939">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_22689 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_22689">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_22730 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_22730">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_22796 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_22796">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_70248 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_70248">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_77155 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_77155">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_43915 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_43915">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.org/obo/owl/FMA#FMA_43895 -->
+    <owl:Class rdf:about="http://purl.org/obo/owl/FMA#FMA_43895">
+        <IAO_0000412 rdf:resource="http://purl.org/obo/owl/FMA.owl"/>
+    </owl:Class>
+
+
+</rdf:RDF>

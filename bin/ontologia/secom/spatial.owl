@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://linkserver.icmc.usp.br/ckonto/spatial#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xml:base="http://linkserver.icmc.usp.br/ckonto/spatial">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This ontology is intended for representing location information.</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:ID="GeographicCoordinates">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="hasGeoCoordinateValue"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasGeoOrientation"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="GeographicLocation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PhysicalLocation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Longitude">
+    <rdfs:subClassOf rdf:resource="#GeographicCoordinates"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Floor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="IndoorLocation"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:ID="contains"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:ID="Room"/>
+              <owl:Class rdf:ID="Corridor"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="VirtualLocation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="SpatialThing"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#SpatialThing">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#PhysicalLocation"/>
+          <owl:Class rdf:about="#VirtualLocation"/>
+        </owl:unionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="GeographicOrientation">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <GeographicOrientation rdf:ID="East"/>
+          <GeographicOrientation rdf:ID="North"/>
+          <GeographicOrientation rdf:ID="Northeast"/>
+          <GeographicOrientation rdf:ID="Northwest"/>
+          <GeographicOrientation rdf:ID="South"/>
+          <GeographicOrientation rdf:ID="Southeast"/>
+          <GeographicOrientation rdf:ID="Southwest"/>
+          <GeographicOrientation rdf:ID="West"/>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#Corridor">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#Room"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:SymmetricProperty rdf:ID="isConnectedTo"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#IndoorLocation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Latitude">
+    <rdfs:subClassOf rdf:resource="#GeographicCoordinates"/>
+  </owl:Class>
+  <owl:Class rdf:ID="StateOrProvince">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="AdministrativeRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Altitude">
+    <rdfs:subClassOf rdf:resource="#GeographicCoordinates"/>
+  </owl:Class>
+  <owl:Class rdf:ID="OutdoorLocation">
+    <rdfs:subClassOf rdf:resource="#GeographicLocation"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#IndoorLocation"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Room">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#IndoorLocation"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#Room"/>
+        <owl:onProperty>
+          <owl:SymmetricProperty rdf:about="#isConnectedTo"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="#contains"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="#Room"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#PhysicalLocation">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasLocationCoordinates"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#SpatialThing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Building">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#IndoorLocation"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="#contains"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="#Room"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#AdministrativeRegion">
+    <rdfs:subClassOf rdf:resource="#PhysicalLocation"/>
+  </owl:Class>
+  <owl:Class rdf:about="#IndoorLocation">
+    <owl:disjointWith rdf:resource="#OutdoorLocation"/>
+    <rdfs:subClassOf rdf:resource="#GeographicLocation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Park">
+    <rdfs:subClassOf rdf:resource="#OutdoorLocation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="City">
+    <rdfs:subClassOf rdf:resource="#AdministrativeRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Street">
+    <rdfs:subClassOf rdf:resource="#OutdoorLocation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Country">
+    <rdfs:subClassOf rdf:resource="#AdministrativeRegion"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="isPartOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:range rdf:resource="#SpatialThing"/>
+    <owl:inverseOf>
+      <owl:TransitiveProperty rdf:about="#contains"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#SpatialThing"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLocationAddress">
+    <rdfs:range rdf:resource="#AdministrativeRegion"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isLocationAddressOf"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#GeographicLocation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasGeographicSubRegion">
+    <owl:inverseOf>
+      <owl:TransitiveProperty rdf:ID="isGeographicSubRegion"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#AdministrativeRegion"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:domain rdf:resource="#AdministrativeRegion"/>
+    <rdfs:subPropertyOf>
+      <owl:TransitiveProperty rdf:about="#contains"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasLocationCoordinates">
+    <rdfs:domain rdf:resource="#PhysicalLocation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasGeographicCoordinates</rdfs:comment>
+    <rdfs:range rdf:resource="#GeographicCoordinates"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isLocationAddressOf">
+    <rdfs:range rdf:resource="#GeographicLocation"/>
+    <owl:inverseOf rdf:resource="#hasLocationAddress"/>
+    <rdfs:domain rdf:resource="#AdministrativeRegion"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="#hasGeoCoordinateValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >geocoordinate value</rdfs:comment>
+    <rdfs:domain rdf:resource="#GeographicCoordinates"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#SpatialThing"/>
+  </owl:DatatypeProperty>
+  <owl:TransitiveProperty rdf:about="#isGeographicSubRegion">
+    <rdfs:domain rdf:resource="#AdministrativeRegion"/>
+    <owl:inverseOf rdf:resource="#hasGeographicSubRegion"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#AdministrativeRegion"/>
+    <rdfs:subPropertyOf rdf:resource="#isPartOf"/>
+  </owl:TransitiveProperty>
+  <owl:TransitiveProperty rdf:about="#contains">
+    <rdfs:domain rdf:resource="#SpatialThing"/>
+    <rdfs:range rdf:resource="#SpatialThing"/>
+    <owl:inverseOf rdf:resource="#isPartOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:TransitiveProperty>
+  <owl:SymmetricProperty rdf:about="#isConnectedTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="#isConnectedTo"/>
+    <rdfs:range rdf:resource="#GeographicLocation"/>
+    <rdfs:domain rdf:resource="#GeographicLocation"/>
+  </owl:SymmetricProperty>
+  <owl:SymmetricProperty rdf:ID="overlapsSpatially">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >reflexive and symmetric property</rdfs:comment>
+    <rdfs:range rdf:resource="#GeographicLocation"/>
+    <rdfs:domain rdf:resource="#GeographicLocation"/>
+    <owl:inverseOf rdf:resource="#overlapsSpatially"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="#isConnectedTo"/>
+  </owl:SymmetricProperty>
+  <owl:SymmetricProperty rdf:ID="meetsSpatially">
+    <owl:inverseOf rdf:resource="#meetsSpatially"/>
+    <rdfs:domain rdf:resource="#GeographicLocation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >irreflexive and symmetric property, connected but not overlapped</rdfs:comment>
+    <rdfs:range rdf:resource="#GeographicLocation"/>
+    <rdfs:subPropertyOf rdf:resource="#isConnectedTo"/>
+  </owl:SymmetricProperty>
+  <owl:FunctionalProperty rdf:ID="hasZipCode">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#GeographicLocation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#hasGeoOrientation">
+    <rdfs:range rdf:resource="#GeographicOrientation"/>
+    <rdfs:domain rdf:resource="#GeographicCoordinates"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 1.3, Build 225.4)  http://protege.stanford.edu -->
