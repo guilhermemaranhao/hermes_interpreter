@@ -15,6 +15,12 @@ import org.json.JSONTokener;
 import br.ufg.inf.mestrado.hermesinterpreter.service.interpretacao.TipoInferencia;
 import br.ufg.inf.mestrado.hermesinterpreter.utils.HermesInterpreterLog;
 
+/**
+ * Classe responsável por manter os itens de configuração do componente, os quais se encontram no arquivo './settings/topics.json'. Possui dependência com a API JSON.org por meio da
+ * qual interage com o arquivo topics.json. Esse arquivo contém registros sobre as ontologias acessadas pelo HI
+ * @author Guilherme Maranhão
+ *
+ */
 public class HermesInterpreterConfigurator {
 
 	//private static JSONObject jsonObject = null;

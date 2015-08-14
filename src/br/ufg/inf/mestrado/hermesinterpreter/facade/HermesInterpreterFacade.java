@@ -11,6 +11,11 @@ import br.ufg.inf.mestrado.hermesinterpreter.service.filtro.HermesInterpreterFil
 import br.ufg.inf.mestrado.hermesinterpreter.service.interpretacao.HermesInterpreterService;
 import br.ufg.inf.mestrado.hermesinterpreter.transferObject.HermesInterpreterTO;
 
+/**
+* Classe que implementa o padrão de projeto Facade, oferecendo aos seus clientes uma interface de alta granulosidade para os serviços oferecidos
+* pelo componente.
+*/
+
 public class HermesInterpreterFacade {
 	
 	public static Timer tempo;
@@ -23,6 +28,10 @@ public class HermesInterpreterFacade {
 		
 	}
 	
+	/**
+	* Inicializa o serviço de comunicação do componente e prepara o HI para o recebimento das notificações de contexto, por meio da criação de tópicos localmente, com os quais o componente irá interagir
+	* tanto para publicação quanto assinatura. Além disso, também assina os tópicos de contexto sobre os quais irá realizar inferência e filtragem de contexto.
+	*/
 	public void inicializarInterpreter()
 	{
 		HermesInterpreterComunicationService comunicacaoService = HermesInterpreterServiceFactory.getComunicacaoService();
@@ -30,6 +39,10 @@ public class HermesInterpreterFacade {
 		comunicacaoService.assinarTopicos();
 	}
 	
+	/**
+	* Invoca o serviço de filtro para criação de filtro para o assinante referente a um tópico.
+	* @param HermesInterpreterTO Encapsula os parâmetros dos filtros e o tópico do assinante.
+	*/
 	public void criarFiltro(HermesInterpreterTO hermesTO)
 	{
 		HermesInterpreterFiltroService filtroService = new HermesInterpreterFiltroService();
@@ -54,6 +67,10 @@ public class HermesInterpreterFacade {
 		tempoFiltro.reset();
 	}
 
+	/**
+	* Invoca o serviço de inferência e filtragem de contexto a cada notificação de contexto.
+	* @param HermesInterpreterTO Encapsula o modelo RDF de contexto serializao, o tópico notificado e outras informações relevantes para o desempenho das atividades do HermesInterpreterService.
+	*/
 	public void inferirInformacoesContexto (HermesInterpreterTO hermesTO)
 	{
 		HermesInterpreterService hermesInterpreterService = HermesInterpreterServiceFactory.getInterpretacaoServiceInstance(hermesTO.getNomeTopico(), hermesTO.getCaminhoOntologia());

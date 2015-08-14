@@ -1,0 +1,12 @@
+br.ufg.inf.mestrado.hermesinterpreter.cliente
+br.ufg.inf.mestrado.hermesinterpreter.configurator
+br.ufg.inf.mestrado.hermesinterpreter.facade
+br.ufg.inf.mestrado.hermesinterpreter.listener
+br.ufg.inf.mestrado.hermesinterpreter.service
+br.ufg.inf.mestrado.hermesinterpreter.service.comunicacao
+br.ufg.inf.mestrado.hermesinterpreter.service.filtro
+br.ufg.inf.mestrado.hermesinterpreter.service.interpretacao
+br.ufg.inf.mestrado.hermesinterpreter.service.interpretacao.backup
+br.ufg.inf.mestrado.hermesinterpreter.situations
+br.ufg.inf.mestrado.hermesinterpreter.transferObject
+br.ufg.inf.mestrado.hermesinterpreter.utils

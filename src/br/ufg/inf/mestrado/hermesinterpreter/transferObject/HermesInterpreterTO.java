@@ -7,6 +7,7 @@ import br.ufg.inf.mestrado.hermesinterpreter.service.filtro.FiltroListener;
 
 import com.hp.hpl.jena.rdf.model.Model;
 
+
 public class HermesInterpreterTO {
 
 	private String nomeTopico;
