@@ -26,12 +26,24 @@ import com.hp.hpl.jena.query.QueryExecutionFactory;
 import com.hp.hpl.jena.query.QueryFactory;
 import com.hp.hpl.jena.rdf.model.Model;
 
+/**
+ * Classe central na manipulação dos filtros do componente. Contém a lógica para criação e execução dos mesmos.
+ * @author guilhermemaranhao
+ *
+ */
 public class HermesInterpreterFiltroService {
 	
 	private String arquivoLogFreqResp = "./log_tempos_validacao/tempo_freq_resp.txt";
 	private String arquivoLogFreqPulso = "./log_tempos_validacao/tempo_freq_pulso.txt";
 	private String arquivoLogPressaoSanguinea = "./log_tempos_validacao/tempo_pressao_sanguinea.txt";
 	
+	/**
+	 * Invocado para criar um filtro para um determinado assinante. Ao final do método, o filtro é adicionado em uma lista de filtros a serem
+	 * processados para o referente tópico. Pode ser em lista de filtros que não necessitam de etapa de inferência, quando os parâmetros são informações já existentes no contexto original publicado. Ou 
+	 * pode ser em lista de filtros que necessitam de etapa de inferência, quando contém parâmetros desconhecidos no momento da notificação de contexto.
+	 * Caso a técnica de inferência exigida seja diferente da corrente para o tópico, essa técnica é adicionada no arquivo de configuração.
+	 * @param hermesTO Encapsula os dados necessário para criação do filtro para um assinante para um determinado tópico. 
+	 */
 	public void criarFiltro (HermesInterpreterTO hermesTO)
 	{
 		HermesInterpreterSituation interpreterBO = HermesInterpreterSituationFactory.getInstance(hermesTO.getCaminhoOntologia(), hermesTO.getNomeTopico());
@@ -68,6 +80,12 @@ public class HermesInterpreterFiltroService {
 		}
 	}
 	
+	/**
+	 * Obtém os filtros pré-criados para um determinado tópico. Diferencia entre filtros que não necessitam de etapa de inferência e filtros que necessitam de etapa de inferência.
+	 * @param hermesTO Encapsula os dados sobre o filtro que está sendo requisitado
+	 * @param comInferencia especifica se deseja listagem de filtros que necessitam ou não de inferência
+	 * @return lista de filtros
+	 */
 	public List<FiltroListener> obterFiltrosPorTopico(HermesInterpreterTO hermesTO, boolean comInferencia)
 	{
 		HermesInterpreterSituation situacao = HermesInterpreterSituationFactory.getInstance(hermesTO.getCaminhoOntologia(), hermesTO.getNomeTopico());
@@ -81,6 +99,14 @@ public class HermesInterpreterFiltroService {
 		}
 	}
 	
+	/**
+	 * Método central em HI, o qual realiza o processamento dos filtros para um tópico.
+	 * @param hermesTO encapsula os dados de contexto que serão utilizados para filtragem.
+	 * @param modeloComContextoOriginal modelo de contexto original, publicado pelos Hermes Widgets.
+	 * @param modeloParaFiltragem modelo para filtragem, caso este tenha passado por etapa de inferência anteriormente.
+	 * @param nivelInferencia Informa ao método se a filtragem deve ser realizada sobre filtros que não demandam inferência ou o contrário.
+	 * @return quantidade de filtros executados.
+	 */
 	public int filtrarContexto(HermesInterpreterTO hermesTO, Model modeloComContextoOriginal, Model modeloParaFiltragem, boolean nivelInferencia)
 	{	
 		List<FiltroListener> filtrosListenersTopico = this.obterFiltrosPorTopico(hermesTO, nivelInferencia);
@@ -155,6 +181,10 @@ public class HermesInterpreterFiltroService {
 		return filtrosListenersTopico.size();
 	}
 	
+	/**
+	 * Invocado quando o schema ontológico é alterado e assim necessita-se que todos os filtros previamente criados de acordo com o schema antigo sejam refeitos.
+	 * @param hermesTO encapsula os atributos para que os filtros sejam refeitos
+	 */
 	public static void refazerFiltros(HermesInterpreterTO hermesTO)
 	{
 		String texto = "Refazendo filtros da ontologia " + hermesTO.getCaminhoOntologia() + " .....";

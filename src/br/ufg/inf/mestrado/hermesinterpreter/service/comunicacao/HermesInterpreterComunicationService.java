@@ -1,8 +1,6 @@
 package br.ufg.inf.mestrado.hermesinterpreter.service.comunicacao;
 
 import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -17,11 +15,18 @@ import br.ufg.inf.mestrado.hermesinterpreter.service.filtro.FiltroListener;
 import br.ufg.inf.mestrado.hermesinterpreter.transferObject.HermesInterpreterTO;
 import br.ufg.inf.mestrado.hermesinterpreter.utils.HermesInterpreterLog;
 
-
+/**
+ * Classe que realiza a comunicação entre o HI e o Hermes Base. Abstrai do restante do componente, os detalhes de comunicação, como publicação de contexto, registro e assinatura de tópicos.
+ * @author guilhermemaranhao
+ *
+ */
 public class HermesInterpreterComunicationService{
 	
 	private HermesBaseManager hermesBaseManager = new HermesBaseManager();
 
+	/**
+	 * Método que solicita ao Hermes Base a criação dos tópicos que estão registrados no arquivo de configuração topics.json 
+	 */
 	public void criarTopicos()
 	{
 		List<String> topicosParaNotificacao = HermesInterpreterConfigurator.getTopicosParaRegistroPorTipo("notificacao");
@@ -44,6 +49,9 @@ public class HermesInterpreterComunicationService{
 		}
 	}
 	
+	/**
+	 * Método que solicita ao Hermes Base a assinatura dos tópicos definidos no arquivo de configuração topics.json.
+	 */
 	public void assinarTopicos()
 	{
 		Map<String, String> topicosNotificacaoParaAssinatura = HermesInterpreterConfigurator.getTopicosParaAssinaturaPorTipo("notificacao");
@@ -86,6 +94,10 @@ public class HermesInterpreterComunicationService{
 		}	
 	}
 	
+	/**
+	 * Método que solicita ao Hermes Base a notificação de um contexto quando o filtro de um assinante é identificado
+	 * @param hermesTO objeto do tipo {@link HermesInterpreterTO} que encapsula as informações relativas a publicação de contexto, como nome do tópico, modelo RDF e identificador do assinante.
+	 */
 	public void notificarFiltro(HermesInterpreterTO hermesTO)
 	{
 		

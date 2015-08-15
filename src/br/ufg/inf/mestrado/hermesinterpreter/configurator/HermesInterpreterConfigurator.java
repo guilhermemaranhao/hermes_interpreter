@@ -17,7 +17,17 @@ import br.ufg.inf.mestrado.hermesinterpreter.utils.HermesInterpreterLog;
 
 /**
  * Classe responsável por manter os itens de configuração do componente, os quais se encontram no arquivo './settings/topics.json'. Possui dependência com a API JSON.org por meio da
- * qual interage com o arquivo topics.json. Esse arquivo contém registros sobre as ontologias acessadas pelo HI
+ * qual interage com o arquivo topics.json. O significado de cada item de configuração é: <br>
+ * <b>ontologias</b>: ontologias acessadas pelo componente <br>
+ * <b>atualizada</b>: boolean que indica se ontologia está atualizada. Baseado nessa informação, o HI define se deve refazer os filtros para se adequarem ao novo schema ontológico <br>
+ * <b>nome</b>: caminho onde se localiza o schema ontológico <br>
+ * <b>tópicos</b>: coleção dos tópicos com os quais o HI interage <br>
+ * <b>ontologia</b>: identifica qual ontologia descreve os conceitos do contexto publicado no respectivo tópico <br>
+ * <b>tipo_inferencia</b>: serviço de inferência que deve ser instanciado pelo componente para inferir o contexto notificado no respectivo tópico <br>
+ * <b>registrar</b>: nome do tópico em questão que deve ser registrado no DDS local. No DDS, cada tópico é mantido localmente pelos publicadores e assinantes de contexto <br>
+ * <b>assinar</b>: para o tópico corrente, identifica se ele deve ser assinado pelo componente. Trata-se de uma listagem pois podem ser realizadas várias assinaturas daquele tópico com complemento de tópico (partition) diferentes <br>
+ * <b>tipo</b>: tipo DDL do tópico assinado. Cada tópico no DDS está associado a um DDL específico, o qual descreve os dados suportados pelo tópico <br>
+ * <b>situation</b>: Objeto JSON que descreve os arquivos de situação de contexto que descrevem os filtros suportados para o referido tópico <br>
  * @author Guilherme Maranhão
  *
  */
@@ -26,6 +36,10 @@ public class HermesInterpreterConfigurator {
 	//private static JSONObject jsonObject = null;
 	private static File arquivo = new File("./settings/topics.json");
 	
+	/**
+	 * Carrega o objeto JSON especificado na variável 'arquivo'. Esse objeto será reutilizado ao longo da execução do HI.
+	 * @return
+	 */
 	private static JSONObject carregarObjetoJson()
 	{
 		try{
@@ -40,6 +54,11 @@ public class HermesInterpreterConfigurator {
 		return null;
 	}	
 	
+	/**
+	 * Utilizado na inicialização do componente. Lista os tópicos configurados para registro.
+	 * @param tipo do tópico associado aos DDLs existentes no DDS
+	 * @return lista de tópicos para registro
+	 */
 	public static ArrayList<String> getTopicosParaRegistroPorTipo(String tipo)
 	{
 		ArrayList<String> topicosParaNotificacao = new ArrayList<String>();
@@ -61,6 +80,11 @@ public class HermesInterpreterConfigurator {
 		return topicosParaNotificacao;
 	}
 	
+	/**
+	 * Utilizado na inicialização do componente. Lista os tópicos configurados para assinatura.
+	 * @param tipo do tópico associado aos DDLs existentes no DDS
+	 * @return lista de tópicos para assinatura
+	 */
 	public static HashMap<String, String> getTopicosParaAssinaturaPorTipo(String tipo)
 	{
 		HashMap<String, String> topicosFiltragemParaAssinatura = new HashMap<>();
@@ -82,6 +106,11 @@ public class HermesInterpreterConfigurator {
 		return topicosFiltragemParaAssinatura;
 	}
 	
+	/**
+	 * Utilizado para inferência de contexto, retorna o tipo de inferência que deve ser instanciado para o tópico recebido
+	 * @param nomeTopico nome do tópico publicado
+	 * @return tipo de inferência associado
+	 */
 	public static TipoInferencia getTipoInferenciaTopico (String nomeTopico)
 	{
 		File arquivo = new File("./settings/topics.json");
@@ -110,6 +139,11 @@ public class HermesInterpreterConfigurator {
 		return null;
 	}
 	
+	/**
+	 * Lista o caminho do arquivo que contém os filtros especificados para o tópico
+	 * @param topico tópico do qual se deseja obter o respectivo json de situação de contexto para filtragem.
+	 * @return caminho do arquivo situation
+	 */
 	public static String getSituationTopico(String topico)
 	{
 		JSONArray topicos = carregarObjetoJson().getJSONArray("topicos");
@@ -130,6 +164,11 @@ public class HermesInterpreterConfigurator {
 		return null;
 	}
 	
+	 /**
+	  * Se o filtro recém-criado demanda por um tipo de inferência diferente do configurado para o(s) tópico(s), esse método deve ser usada para reconfiguração.
+	  * @param tipoInferencia novo tipo de inferência
+	  * @param topicos lista de tópicos que sofrerão alteração
+	  */
 	public static void alterarTipoInferenciaParaTopico(TipoInferencia tipoInferencia, String[] topicos)
 	{
 		JSONObject novoJsonObject = carregarObjetoJson();
@@ -155,6 +194,11 @@ public class HermesInterpreterConfigurator {
 		atualizarArquivoConfiguracao(novoJsonObject);
 	}
 	
+	/**
+	 * obtem schema ontológico que descreve os conceitos do contexto publicado para o tópico em questão
+	 * @param nomeTopico tópico do qual se deseja obter o schema ontológico
+	 * @return caminho de localização do schema ontológico
+	 */
 	public static String getOntologiaTopico(String nomeTopico)
 	{
 		JSONArray topicos = carregarObjetoJson().getJSONArray("topicos");
@@ -169,6 +213,11 @@ public class HermesInterpreterConfigurator {
 		return null;
 	}
 
+	/**
+	 * Verifica se ontologia está atualizada
+	 * @param ontologia ontologia a qual se deseja verificar se está atualizada
+	 * @return flag que informa sobre atualização da ontologia
+	 */
 	public static boolean isOntologiaAtualizada(String ontologia)
 	{
 		JSONArray jsonOntologias = carregarObjetoJson().getJSONArray("ontologias");
@@ -184,6 +233,11 @@ public class HermesInterpreterConfigurator {
 		return true;
 	}
 	
+	/**
+	 * Após atualização da ontologia, seu status deve ser alterado por esse método no arquivo de configuração
+	 * @param ontologia ontologia a qual deseja ser atualizada
+	 * @param novoStatus novo status da ontologia
+	 */
 	public static void atualizarStatusOntologia(String ontologia, boolean novoStatus)
 	{
 		JSONObject novoJsonObject = carregarObjetoJson();
@@ -200,6 +254,10 @@ public class HermesInterpreterConfigurator {
 		atualizarArquivoConfiguracao(novoJsonObject);
 	}
 	
+	/**
+	 * Solicitado para gerar outro arquivo de configuração após quaisquer das alterações terem sido efetuadas.
+	 * @param novoJsonObject
+	 */
 	private static void atualizarArquivoConfiguracao(JSONObject novoJsonObject)
 	{
 		arquivo.delete();

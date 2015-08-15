@@ -12,7 +12,7 @@ import br.ufg.inf.mestrado.hermesinterpreter.service.interpretacao.HermesInterpr
 import br.ufg.inf.mestrado.hermesinterpreter.transferObject.HermesInterpreterTO;
 
 /**
-* Classe que implementa o padrÃ£o de projeto Facade, oferecendo aos seus clientes uma interface de alta granulosidade para os serviÃ§os oferecidos
+* Classe que implementa o padrão de projeto Facade, oferecendo aos seus clientes uma interface de alta granulosidade para os serviços oferecidos
 * pelo componente.
 */
 
@@ -29,8 +29,8 @@ public class HermesInterpreterFacade {
 	}
 	
 	/**
-	* Inicializa o serviÃ§o de comunicaÃ§Ã£o do componente e prepara o HI para o recebimento das notificaÃ§Ãµes de contexto, por meio da criaÃ§Ã£o de tÃ³picos localmente, com os quais o componente irÃ¡ interagir
-	* tanto para publicaÃ§Ã£o quanto assinatura. AlÃ©m disso, tambÃ©m assina os tÃ³picos de contexto sobre os quais irÃ¡ realizar inferÃªncia e filtragem de contexto.
+	* Inicializa o serviço de comunicação do componente e prepara o HI para o recebimento das notificações de contexto, por meio da criação de tópicos localmente, com os quais o componente irá interagir
+	* tanto para publicação quanto assinatura. Além disso, também assina os tópicos de contexto sobre os quais irá realizar inferência e filtragem de contexto.
 	*/
 	public void inicializarInterpreter()
 	{
@@ -40,8 +40,8 @@ public class HermesInterpreterFacade {
 	}
 	
 	/**
-	* Invoca o serviÃ§o de filtro para criaÃ§Ã£o de filtro para o assinante referente a um tÃ³pico.
-	* @param HermesInterpreterTO Encapsula os parÃ¢metros dos filtros e o tÃ³pico do assinante.
+	* Invoca o serviço de filtro para criação de filtro para o assinante referente a um tópico.
+	* @param hermesTO Encapsula os parâmetros dos filtros e o tópico do assinante.
 	*/
 	public void criarFiltro(HermesInterpreterTO hermesTO)
 	{
@@ -68,8 +68,8 @@ public class HermesInterpreterFacade {
 	}
 
 	/**
-	* Invoca o serviÃ§o de inferÃªncia e filtragem de contexto a cada notificaÃ§Ã£o de contexto.
-	* @param HermesInterpreterTO Encapsula o modelo RDF de contexto serializao, o tÃ³pico notificado e outras informaÃ§Ãµes relevantes para o desempenho das atividades do HermesInterpreterService.
+	* Invoca o serviço de inferência e filtragem de contexto a cada notificação de contexto.
+	* @param hermesTO Encapsula o modelo RDF de contexto serializao, o tópico notificado e outras informações relevantes para o desempenho das atividades do HermesInterpreterService.
 	*/
 	public void inferirInformacoesContexto (HermesInterpreterTO hermesTO)
 	{
