@@ -7,7 +7,11 @@ import br.ufg.inf.mestrado.hermesinterpreter.service.filtro.FiltroListener;
 
 import com.hp.hpl.jena.rdf.model.Model;
 
-
+/**
+ * CLasse POJO que implementa o padrão de projeto Transfer Object. Trafegado pelas camadas do HI, encapsula as informações que são utilizadas para criação e execução dos filtros e notificação dos assinantes.
+ * @author guilhermemaranhao
+ *
+ */
 public class HermesInterpreterTO {
 
 	private String nomeTopico;
