@@ -6,6 +6,11 @@ import br.ufg.inf.mestrado.hermesinterpreter.service.interpretacao.HermesInterpr
 
 import com.hp.hpl.jena.rdf.model.InfModel;
 
+/**
+ * Encapsula os atributos básicos para inferência baseada em regras, que são reutilizados a cada notificação de contexto.
+ * @author guilhermemaranhao
+ *
+ */
 public class HermesServiceRegrasPOJO {
 
 	private String caminhoOntologia;

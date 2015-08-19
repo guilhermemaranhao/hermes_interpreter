@@ -1,5 +1,10 @@
 package br.ufg.inf.mestrado.hermesinterpreter.service.interpretacao;
 
+/**
+ * Descreve os tipos de inferência suportados pelo HI.
+ * @author guilhermemaranhao
+ *
+ */
 public enum TipoInferencia {
 
 	regras,

@@ -8,13 +8,27 @@ import com.hp.hpl.jena.rdf.model.InfModel;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 
+/**
+ * Classe abstrata que implementa o padrão de projeto Strategy ao expor um método que é acessado de forma transparente pelo cliente, que desconhece
+ * o mecanismo de inferência acessado para o tópico.
+ * @author guilhermemaranhao
+ *
+ */
 public abstract class HermesInterpreterService {
 
 	protected Model modeloIndividuoAtual = null;
 	protected InfModel infModel = null;
 	
+	/**
+	 * Método exposto que deve ser implementado pelos serviços de inferência.
+	 * @param to
+	 */
 	public abstract void inferirSituacao(HermesInterpreterTO to);
 	
+	/**
+	 * Atualizado o objeto {@link InfModel} conforme o contexto é notificado.
+	 * @param hermesTO
+	 */
 	protected void atualizarContexto(HermesInterpreterTO hermesTO)
 	{
 		// Cria modelo ontológico para instância de dados RDF.

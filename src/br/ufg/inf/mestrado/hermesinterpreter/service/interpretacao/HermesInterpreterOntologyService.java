@@ -19,6 +19,11 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.reasoner.ValidityReport;
 import com.hp.hpl.jena.reasoner.ValidityReport.Report;
 
+/**
+ * Serviço de inferência ontológica. Estende a classe abstrata {@link HermesInterpreterService} e implementa o método inferirSituacao para o mecanismo de inferência oferecido.
+ * @author guilhermemaranhao
+ *
+ */
 public class HermesInterpreterOntologyService extends HermesInterpreterService {
 	
 	private Timers temposInferenciaOntologica;
@@ -36,6 +41,12 @@ public class HermesInterpreterOntologyService extends HermesInterpreterService {
 
 	//private PelletInfGraph pellet = null;
 	
+	/**
+	 * Construtor que atribui os objetos que serão utilizados pelo serviço para as inferências ontológicas de contexto.
+	 * @param infModel objeto que armazenará o contexto inferido
+	 * @param pellet objeto que efetua a inferência ontológica
+	 * @param temposInferenciaOntologica
+	 */
 	public HermesInterpreterOntologyService(InfModel infModel, PelletInfGraph pellet, Timers temposInferenciaOntologica)
 	{
 		this.infModel = infModel;
@@ -43,6 +54,10 @@ public class HermesInterpreterOntologyService extends HermesInterpreterService {
 		this.temposInferenciaOntologica = temposInferenciaOntologica;
 	}
 
+	/**
+	 * Invocado para inferência de contexto.
+	 * @param hermesTO encapsula os dados de contexto necessários para inferência.
+	 */
 	@Override
 	public synchronized void inferirSituacao(HermesInterpreterTO hermesTO) 
 	{
@@ -113,6 +128,13 @@ public class HermesInterpreterOntologyService extends HermesInterpreterService {
 		}
 	}
 	
+	/**
+	 * Invoca o serviço de filtragem de contexto
+	 * @param hermesTO
+	 * @param modeloParaFiltragem
+	 * @param nivelInferencia
+	 * @return
+	 */
 	private int filtrarContexto(HermesInterpreterTO hermesTO, Model modeloParaFiltragem, boolean nivelInferencia)
 	{
 		HermesInterpreterFiltroService filtroService = new HermesInterpreterFiltroService();
@@ -121,6 +143,12 @@ public class HermesInterpreterOntologyService extends HermesInterpreterService {
 		return filtroService.filtrarContexto(hermesTO, novoModeloParaContextoOriginal, modeloParaFiltragem, nivelInferencia);
 	}
 	
+	/**
+	 * Registra tempo demandado para inferência e filtragem.
+	 * @param hermesTO
+	 * @param quantidadeFiltrosSemInferencia
+	 * @param quantidadeFiltrosComInferencia
+	 */
 	private void registrarTemposEmArquivo(HermesInterpreterTO hermesTO, int quantidadeFiltrosSemInferencia, int quantidadeFiltrosComInferencia)
 	{
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

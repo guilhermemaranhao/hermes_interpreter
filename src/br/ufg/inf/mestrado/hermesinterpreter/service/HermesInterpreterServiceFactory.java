@@ -28,6 +28,11 @@ import com.hp.hpl.jena.reasoner.ValidityReport;
 import com.hp.hpl.jena.reasoner.ValidityReport.Report;
 import com.hp.hpl.jena.util.FileManager;
 
+/**
+ * Fábrica de serviços de inferência que instancia o serviço apropriado para o tópico corrente.
+ * @author guilhermemaranhao
+ *
+ */
 public class HermesInterpreterServiceFactory {
 	
 	private static HermesInterpreterComunicationService hermesComunicacao;
@@ -56,6 +61,13 @@ public class HermesInterpreterServiceFactory {
 		
 	}
 	
+	/**
+	 * Retorna a instância do serviço de inferência para o tópico, com base na ontologia de contexto. HI contém uma instância de serviço de inferência
+	 * por schema ontológico suportado. Baseado no caminhoOntologia e nomeTopico, o serviço é instanciado ou obtido, se já existente.
+	 * @param nomeTopico
+	 * @param caminhoOntologia
+	 * @return
+	 */
 	public static HermesInterpreterService getInterpretacaoServiceInstance(String nomeTopico, String caminhoOntologia)
 	{
 		TipoInferencia tipoInferencia = HermesInterpreterConfigurator.getTipoInferenciaTopico(nomeTopico);
@@ -215,6 +227,10 @@ public class HermesInterpreterServiceFactory {
 		return null;
 	}
 	
+	/**
+	 * Método que retorna a única instância existente do serviço de comunicação.
+	 * @return
+	 */
 	public static HermesInterpreterComunicationService getComunicacaoService()
 	{
 		if (hermesComunicacao == null)

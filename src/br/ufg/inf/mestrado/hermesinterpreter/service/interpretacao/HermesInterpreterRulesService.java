@@ -20,6 +20,11 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.reasoner.ValidityReport;
 import com.hp.hpl.jena.reasoner.ValidityReport.Report;
 
+/**
+ * Serviço de inferência baseado em regras. Estende a classe abstrata {@link HermesInterpreterService} e implementa o método inferirSituacao para o mecanismo de inferência oferecido.
+ * @author guilhermemaranhao
+ *
+ */
 public class HermesInterpreterRulesService extends HermesInterpreterService{
 
 	private static String MLT = "mlt";
@@ -38,7 +43,12 @@ public class HermesInterpreterRulesService extends HermesInterpreterService{
 	
 	private String arquivoTextoLog = "./log_tempos_validacao/tempo_inferencia_regras.txt";
 
-	
+	/**
+	 * Construtor que atribui os objetos que serão utilizados pelo serviço para as inferências baseadas em regras de contexto.
+	 * @param infModel objeto que armazenará o contexto inferido
+	 * @param pellet objeto que efetua a inferência ontológica
+	 * @param temposInferenciaOntologica
+	 */	
 	public HermesInterpreterRulesService(InfModel infModel, PelletInfGraph pellet, Timers temposInferenciaOntologia)
 	{
 		this.infModel = infModel;
@@ -64,6 +74,10 @@ public class HermesInterpreterRulesService extends HermesInterpreterService{
 //		}
 //	}
 	
+	/**
+	 * Invocado para inferência de contexto.
+	 * @param hermesTO encapsula os dados de contexto necessários para inferência.
+	 */
 	@Override
 	public synchronized void inferirSituacao(HermesInterpreterTO hermesTO) 
 	{
@@ -146,6 +160,13 @@ public class HermesInterpreterRulesService extends HermesInterpreterService{
 		}
 	}
 	
+	/**
+	 * Invoca o serviço de filtragem de contexto
+	 * @param hermesTO
+	 * @param modeloParaFiltragem
+	 * @param nivelInferencia
+	 * @return
+	 */
 	private int filtrarContexto(HermesInterpreterTO hermesTO, Model modeloParaFiltragem, boolean nivelInferencia)
 	{
 		HermesInterpreterFiltroService filtroService = new HermesInterpreterFiltroService();
@@ -154,6 +175,12 @@ public class HermesInterpreterRulesService extends HermesInterpreterService{
 		return filtroService.filtrarContexto(hermesTO, novoModeloContextoOriginal, modeloParaFiltragem, nivelInferencia);
 	}
 	
+	/**
+	 * Registra tempo demandado para inferência e filtragem.
+	 * @param hermesTO
+	 * @param quantidadeFiltrosSemInferencia
+	 * @param quantidadeFiltrosComInferencia
+	 */
 	private void registrarTemposEmArquivo(HermesInterpreterTO hermesTO, int quantidadeFiltrosSemInferencia, int quantidadeFiltrosComInferencia)
 	{
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

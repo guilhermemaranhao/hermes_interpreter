@@ -16,7 +16,7 @@ import br.ufg.inf.mestrado.hermesinterpreter.transferObject.HermesInterpreterTO;
 import br.ufg.inf.mestrado.hermesinterpreter.utils.HermesInterpreterLog;
 
 /**
- * Classe que realiza a comunicação entre o HI e o Hermes Base. Abstrai do restante do componente, os detalhes de comunicação, como publicação de contexto, registro e assinatura de tópicos.
+ * Classe singleton que realiza a comunicação entre o HI e o Hermes Base. Abstrai do restante do componente, os detalhes de comunicação, como publicação de contexto, registro e assinatura de tópicos.
  * @author guilhermemaranhao
  *
  */
